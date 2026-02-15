@@ -1,0 +1,226 @@
+/* pleasure.css - Shop page styling for Pleasure section */
+
+/* Reset & body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #fff0f5;
+  color: #333;
+}
+
+/* Header */
+.pleasure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #ff69b4;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.pleasure-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.pleasure-header nav a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.pleasure-header nav a:hover {
+  color: #ffe6f0;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 15px 20px;
+  background: #ffc0cb44;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #ff69b4;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #ff1493;
+  box-shadow: 0 0 10px #ff69b4;
+}
+
+/* Shop Container */
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff0f5;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+}
+
+/* Swipeable Image Container */
+.product-card .image-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.product-card .image-slider img {
+  width: 100%;
+  min-width: 100%;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card .image-slider img:hover {
+  transform: scale(1.05);
+}
+
+/* Product Info */
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  color: #ff1493;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  margin: 3px 0;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #ff1493;
+  margin: 5px 0;
+}
+
+/* Buttons */
+.product-card button {
+  padding: 8px 15px;
+  margin: 5px 5px 0 5px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.product-card .add-to-cart {
+  background: #ff69b4;
+  color: #fff;
+}
+
+.product-card .add-to-cart:hover {
+  background: #ff1493;
+}
+
+.product-card .buy-now {
+  background: #ff1493;
+  color: #fff;
+}
+
+.product-card .buy-now:hover {
+  background: #ff69b4;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff1493;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 10000;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Scrollbar hidden for slider */
+.product-card .image-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card .image-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Swipe arrow hint above images */
+.swipe-hint {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff007f;
+  margin-bottom: 8px;
+  animation: swipeMove 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes swipeMove {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 500px) {
+  .pleasure-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-bar input {
+    max-width: 90%;
+  }
+}
