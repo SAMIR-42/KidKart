@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KidKart - Toys</title>
+    <link rel="stylesheet" href="shop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-dolly"></i>
+        <span>KidKart</span>
+      </div>
+      <nav>
+        <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+        <!-- <a href="shop.html">Shop</a> -->
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+      </nav>
+    </header>
+
+    <!-- Shop Section -->
+    <section class="shop">
+      <div class="shop-header">
+        <h1>Big Fun for Little Ones!</h1>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search Toys by country..."
+        />
+      </div>
+
+      <div class="doll-grid" id="dollGrid">
+        <!-- Example Doll Card -->
+        <div class="doll-card" data-country="UK">
+          <img src="../assets/turboracing.jpg" alt="UK Doll" />
+          <h2>Turbo Racer Remote Car</h2>
+          <p class="age">Age: 5–10 years</p>
+          <p class="description">
+            Fast remote control racing car with smooth steering and bright LED
+            lights.
+          </p>
+          <p class="price">₹1,299</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="Russia">
+          <img src="../assets/mega.jpg" alt="Russia Doll" />
+          <h2>Mega Building Blocks Set (120 pcs)</h2>
+          <p class="age">Age: 4–8 years</p>
+          <p class="description">
+            Description: Colorful building blocks to improve creativity and
+            problem-solving skills.
+          </p>
+          <p class="price">₹899</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="Japan">
+          <img src="../assets/dino.jpg" alt="Japan Doll" />
+          <h2>Dino Adventure Play Set</h2>
+          <p class="age">Age: 3–7 years</p>
+          <p class="description">
+            Realistic dinosaur figures with jungle accessories for imaginative
+            play.
+          </p>
+          <p class="price">₹749</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Add more dolls similarly -->
+        <div class="doll-card" data-country="Brazil">
+          <img src="../assets/hero.jpg" alt="Brazil Doll" />
+          <h2>Super Hero Action Figure</h2>
+          <p class="age">Age: 5–12 years</p>
+          <p class="description">
+            Movable action figure with detailed costume and strong build
+            quality.
+          </p>
+          <p class="price">₹599</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="India">
+          <img src="../assets/cri.jpg" alt="India Doll" />
+          <h2>Kids Cricket Set</h2>
+          <p class="age">Age: 6–12 years</p>
+          <p class="description">
+            Lightweight bat, ball and stumps perfect for beginner cricket
+            lovers.
+          </p>
+          <p class="price">₹699</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="india">
+          <img src="../assets/pino.jpg" alt="Korea Doll" />
+          <h2>Musical Learning Piano</h2>
+          <p class="age">Age: 3–6 years</p>
+          <p class="description">
+            Fun keyboard with animal sounds and learning modes.
+          </p>
+          <p class="price">₹1,099</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="USA">
+          <img src="../assets/cops.jpg" alt="USA Doll" />
+          <h2>Police Jeep Toy Car</h2>
+          <p class="age">Age: 4–9 years</p>
+          <p class="description">
+            Pull-back action jeep with siren sound and flashing lights.
+          </p>
+          <p class="price">₹549</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="Spain">
+          <img src="../assets/mag.jpg" alt="Spain Doll" />
+          <h2>Magnetic Drawing Board</h2>
+          <p class="age">Age: 3–8 years</p>
+          <p class="description">
+            Reusable writing board to practice drawing and writing.
+          </p>
+          <p class="price">₹499</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="Italy">
+          <img src="../assets/robo.jpg" alt="Italy Doll" />
+          <h2>Robot Warrior Toy</h2>
+          <p class="age">Age: 6–12 years</p>
+          <p class="description">
+            Battery-operated robot with walking action and light effects.
+          </p>
+          <p class="price">₹1,499</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="doll-card" data-country="France">
+          <img src="../assets/foot.jpg" alt="France Doll" />
+          <h2>Mini Basketball Hoop Set</h2>
+          <p class="age">Age: 5–10 years</p>
+          <p class="description">
+            Indoor mini basketball set for active fun at home.
+          </p>
+          <p class="price">₹799</p>
+          <div class="card-buttons">
+            <button class="add-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="button-container">
+      <a href="../boys/boyshop.html" class="btn boy-shop-btn">
+        Explore Action Toys →
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026. KidKart!</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </footer>
+
+    <script src="shop.js"></script>
+  </body>
+</html>
