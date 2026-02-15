@@ -1,0 +1,157 @@
+/* pleasurecheckout.css - Fake payment page styling */
+
+/* Reset & body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #fff0f5;
+  color: #333;
+}
+
+/* Header */
+.pleasure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #ff69b4;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.pleasure-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.pleasure-header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.pleasure-header nav a:hover {
+  color: #ffe6f0;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Checkout Section */
+.checkout-section {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffe6f0;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+  text-align: center;
+}
+
+.checkout-section h2 {
+  color: #ff1493;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-form label {
+  text-align: left;
+  font-weight: 600;
+  color: #ff1493;
+}
+
+.checkout-form input {
+  padding: 10px;
+  border: 2px solid #ff69b4;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.checkout-form input:focus {
+  border-color: #ff1493;
+  box-shadow: 0 0 5px #ff1493;
+}
+
+/* Pay button */
+.pay-btn {
+  padding: 12px 0;
+  background: #ff69b4;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  background: #ff1493;
+  transform: scale(1.05);
+}
+
+/* Loading & success messages */
+.loading,
+.success {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #fff;
+  display: none;
+}
+
+.loading {
+  background: #ff69b4;
+  animation: pulse 1s infinite;
+}
+
+.success {
+  background: #ff1493;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 500px) {
+  .checkout-section {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .checkout-form input {
+    font-size: 0.9rem;
+  }
+
+  .pay-btn {
+    font-size: 1rem;
+  }
+}

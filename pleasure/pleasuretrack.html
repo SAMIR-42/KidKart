@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pleasure Order Tracking</title>
+    <link rel="stylesheet" href="pleasuretrack.css" />
+  </head>
+  <body>
+    <h2 class="title">Track Your Order</h2>
+
+    <div class="track-box">
+      <input type="text" id="orderId" placeholder="Enter Order ID" />
+      <button id="trackBtn">Track Now</button>
+    </div>
+
+    <div id="statusBox" class="statusBox hidden">
+      <h3>Order Status</h3>
+      <p id="statusText"></p>
+
+      <div class="progress">
+        <div class="bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <script src="pleasuretrack.js"></script>
+  </body>
+</html>
