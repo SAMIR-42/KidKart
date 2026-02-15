@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KidKart - boy's Area</title>
+    <link rel="stylesheet" href="boyshop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-dolly"></i>
+        <span>KidKart</span>
+      </div>
+      <nav>
+        <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+        <!-- <a href="boyshop.html">Boys Shop</a> -->
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart</a>
+      </nav>
+    </header>
+
+    <!-- Boys Shop Section -->
+    <section class="shop-section">
+      <h1>All Your Favorite Toys in One Place</h1>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by country..."
+        />
+      </div>
+
+      <!-- Dolls Grid -->
+      <div class="dolls-grid" id="dollsGrid">
+        <!-- Boy Doll Example 1 -->
+        <div class="doll-card" data-country="Brazil" data-price="4500">
+          <img src="../boy_brazil.jpg" alt="Brazil Doll" />
+          <h2>Thunder Strike RC Car</h2>
+          <p>Age: 5–12 years+</p>
+          <p>High-speed remote control car with drift mode and LED lights.</p>
+          <p>Price: ₹1,499</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <!-- Boy Doll Example 2 -->
+        <div class="doll-card" data-country="USA" data-price="5000">
+          <img src="../boy_usa.jpg" alt="USA Doll" />
+          <h2>Battle Warrior Action Figure</h2>
+          <p>Age: 6–12 years</p>
+          <p>
+            Strong build superhero figure with movable arms and legs.
+          </p>
+          <p>Price: ₹699</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <!-- Boy Doll Example 3 -->
+        <div class="doll-card" data-country="Japan" data-price="4700">
+          <img src="../boy_japan.jpg" alt="Japan Doll" />
+          <h2>Monster Crusher Truck</h2>
+          <p>Age: 4–10 years</p>
+          <p>
+            Big wheel monster truck with shock-absorber design.
+          </p>
+          <p>Price: ₹899</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <!-- Boy Doll Example 4 -->
+        <div class="doll-card" data-country="Korea" data-price="4600">
+          <img src="../boy_korea.jpg" alt="Korea Doll" />
+          <h2>Junior Cricket Champion Kit</h2>
+          <p>Age:  6–13 years</p>
+          <p>
+            Complete cricket set for beginners with bat, ball and stumps.
+          </p>
+          <p>Price: ₹799</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <div class="doll-card" data-country="Korea" data-price="4600">
+          <img src="../boy_italy.jpg" alt="Korea Doll" />
+          <h2>Robo Fighter X</h2>
+          <p>Age: 7–12 years</p>
+          <p>
+            Battery-operated fighting robot with lights and sounds.
+          </p>
+          <p>Price: ₹1,799</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <div class="doll-card" data-country="Korea" data-price="4600">
+          <img src="../boy_spain.jpg" alt="Korea Doll" />
+          <h2>Blaze Beyblade Battle Set</h2>
+          <p>Age: 6–12 years</p>
+          <p>
+            High-speed spinning tops with dual launcher.
+          </p>
+          <p>Price:  ₹649</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <div class="doll-card" data-country="Korea" data-price="4600">
+          <img src="../boy_india.jpg" alt="Korea Doll" />
+          <h2> Turbo Police Bike</h2>
+          <p>Age: 5–10 years</p>
+          <p>Pull-back police bike with siren and flashing lights.</p>
+          <p>Price: ₹549</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <div class="doll-card" data-country="Korea" data-price="4600">
+          <img src="../boy_russia.jpg" alt="Korea Doll" />
+          <h2>Dart Blaster Pro</h2>
+          <p>Age: 7–14 years</p>
+          <p>
+            Soft foam dart gun with long shooting range.
+          </p>
+          <p>Price: ₹1,099</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <div class="doll-card" data-country="Korea" data-price="4600">
+          <img src="../boy_france.jpg" alt="Korea Doll" />
+          <h2>Construction Builder Set (150 pcs)</h2>
+          <p>Age: 5–12 years</p>
+          <p>
+            Engineering block set to build trucks and machines.
+          </p>
+          <p>Price: ₹1,299</p>
+          <button class="add-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+
+        <!-- Add more boy dolls following same format -->
+      </div>
+    </section>
+    <div class="btn-container">
+      <a href="../Man/menshop.html" class="btn men-cart-btn">
+        Go to Trending cart <i class="fas fa-shopping-cart"></i>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026. Choose what you want!</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </footer>
+
+    <script src="boyshop.js"></script>
+  </body>
+</html>
