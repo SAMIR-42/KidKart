@@ -1,0 +1,203 @@
+/* menshop.css - Men's Toys Shop Styling */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+/* Header */
+.men-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.men-header .logo {
+  color: #ff6f00;
+  font-weight: 700;
+  font-size: 20px;
+}
+.men-header nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 600;
+}
+.men-header nav a:hover {
+  color: #ff6f00;
+}
+
+/* Search Bar */
+.search-bar {
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  gap: 10px;
+}
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  background: #1f1f1f;
+  color: #fff;
+}
+
+/* Shop Grid */
+.shop-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Product Card */
+.product-card {
+  background: #141414;
+  border-radius: 15px;
+  border: 1px solid #222;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 111, 0, 0.3);
+}
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.product-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 16px;
+  color: #ff6f00;
+}
+.product-card p {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  color: #ccc;
+  text-align: center;
+}
+.product-card .price {
+  font-weight: 700;
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.product-card button {
+  width: 90%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.add-to-cart {
+  background: #00ff88;
+  color: #000;
+}
+.add-to-cart:hover {
+  background: #00cc66;
+}
+.buy-now {
+  background: #ff6f00;
+  color: #000;
+}
+.buy-now:hover {
+  background: #cc5500;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%) scale(0.95);
+  background: #00ff88;
+  color: #000;
+  padding: 12px 18px;
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  z-index: 9999;
+}
+.popup.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .shop-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-card img {
+    height: 150px;
+  }
+}
+@media (max-width: 400px) {
+  .shop-container {
+    grid-template-columns: 1fr;
+  }
+}
+.track-btn {
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  padding: 12px 25px;
+  background: #00ff88;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.track-btn i {
+  margin-left: 8px;
+}
+
+.track-btn:hover {
+  background: #00cc66;
+}
+.goPleasureBtn {
+  display: block;
+  width: 90%;
+  margin: 15px auto;
+  padding: 12px;
+  background: #ff1493;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.goPleasureBtn:hover {
+  background: #ff4da6;
+  transform: scale(1.05);
+}

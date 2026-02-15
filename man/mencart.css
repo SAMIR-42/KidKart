@@ -1,0 +1,147 @@
+/* mencart.css - Men's Cart Styling */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.men-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #222;
+}
+.men-header .logo {
+  color: #ff6f00;
+  font-weight: 700;
+  font-size: 20px;
+}
+.men-header nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+}
+.men-header nav a:hover {
+  color: #ff6f00;
+}
+
+.cart-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #141414;
+  border-radius: 15px;
+  border: 1px solid #222;
+  text-align: center;
+}
+.cart-section h2 {
+  color: #ff6f00;
+  margin-bottom: 15px;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #222;
+  transition: transform 0.3s ease;
+}
+.cart-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.cart-item .item-info {
+  flex: 1;
+  margin-left: 15px;
+  text-align: left;
+}
+.cart-item .item-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #00ff88;
+}
+.cart-item .item-info p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+.cart-item .remove-btn {
+  background: #ff4d6d;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cart-item .remove-btn:hover {
+  background: #cc3a55;
+}
+
+.cart-total {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.checkout-btn {
+  background: #ff6f00;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.checkout-btn:hover {
+  background: #cc5500;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%) scale(0.95);
+  background: #00ff88;
+  color: #000;
+  padding: 12px 18px;
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  z-index: 9999;
+}
+.popup.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cart-item .item-info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
