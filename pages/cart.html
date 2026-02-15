@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KidKart</title>
+    <link rel="stylesheet" href="cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-dolly"></i>
+        <span>KidKart</span>
+      </div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <!-- <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a> -->
+      </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+      <h1>Your Cart 🛒</h1>
+      <div class="cart-container" id="cartContainer">
+        <!-- Example Cart Item -->
+        <div class="cart-item" data-price="5000">
+          <img src="../assets/dolls/#doll_uk.jpg" alt="Britney Doll" />
+
+          <div class="item-info">
+            <h2>Britney Doll</h2>
+            <p>Age: 7</p>
+            <p>₹399</p>
+          </div>
+          <button class="remove-item">Remove</button>
+        </div>
+
+        <div class="cart-item" data-price="6500">
+          <img src="../assets/dolls/#doll_russia.jpg" alt="Anastasia Doll" />
+          <div class="item-info">
+            <h2>Anastasia Doll</h2>
+            <p>Age: 10</p>
+            <p>₹599</p>
+          </div>
+          <button class="remove-item">Remove</button>
+        </div>
+
+        <!-- Add more cart items as needed -->
+      </div>
+
+      <div class="cart-summary">
+        <p>Total: ₹<span id="totalPrice">0</span></p>
+        <div class="cart-buttons">
+          <button id="backBtn">← Back to Shop</button>
+          <button id="buyBtn">Proceed to Buy 💳</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026. KidKart!</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </footer>
+
+    <script src="cart.js"></script>
+  </body>
+</html>

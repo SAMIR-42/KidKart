@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PATIL VAADI - Fake Payment</title>
+    <link rel="stylesheet" href="checkout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-dolly"></i>
+        <span>GIRL'S CART</span>
+      </div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+      </nav>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+      <h1>Payment 💳</h1>
+      <form id="paymentForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="card">Card Number</label>
+          <input
+            type="text"
+            id="card"
+            placeholder="1234 5678 9012 3456"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="expiry">Expiry Date</label>
+          <input type="text" id="expiry" placeholder="MM/YY" required />
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123" required />
+        </div>
+        <div class="checkout-buttons">
+          <button type="button" id="backBtn">← Back to Shop</button>
+          <button type="submit" id="payBtn">Pay Now 💸</button>
+        </div>
+      </form>
+
+      <!-- Loading Animation -->
+      <div class="loading" id="loading">
+        <i class="fas fa-spinner fa-spin"></i> Processing Payment...
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 PATIL VAADI. sexy, & Hot Bitchess!</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>
