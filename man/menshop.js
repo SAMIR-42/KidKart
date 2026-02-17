@@ -6,35 +6,35 @@ const products = [
     age: 8,
     desc: "Interactive learning tablet with alphabets, numbers and fun quiz games",
     price: 1299,
-    img: "../durex.jpg",
+    img: "../assets/sl.jpg",
   },
   {
-    name: " Princess Makeup Play Kit",
+    name: "Princess Makeup Play Kit",
     age: 10,
     desc: "Safe pretend makeup set with mirror and colorful accessories.",
     price: 899,
-    img: "../Durex_invisible.jpg",
+    img: "../assets/pm.jpg",
   },
   {
     name: "Turbo Drift Racing Car",
     age: 12,
     desc: "High-speed remote car with drift wheels and LED headlights.",
     price: 1499,
-    img: "../KamaSutra.jpg",
+    img: "../assets/td.jpg",
   },
   {
     name: "Creative Art & Craft Box",
     age: 12,
     desc: "Complete DIY craft kit with colors, stickers and activity sheets.",
     price: 699,
-    img: "../Skore_ZigZag.jpg",
+    img: "../assets/ca.jpg",
   },
   {
     name: "Dino World Adventure Set",
     age: 9,
     desc: "Realistic dinosaur figures with jungle play mat..",
     price: 849,
-    img: "../Bleu.jpg",
+    img: "../assets/dw.jpg",
   },
 
   {
@@ -42,15 +42,15 @@ const products = [
     age: 8,
     desc: "Soft plush teddy that repeats what kids say in a funny voice.",
     price: 999,
-    img: "../Bleu.jpg",
+    img: "../assets/ct.jpg",
   },
 
   {
-    name: " Mini Basketball Pro Set",
+    name: "Mini Basketball Pro Set",
     age: 12,
     desc: "Indoor wall-mount basketball hoop with mini ball.",
     price: 799,
-    img: "../Bleu.jpg",
+    img: "../assets/mb.jpg",
   },
 
   {
@@ -58,7 +58,7 @@ const products = [
     age: 13,
     desc: "Safe science experiments to boost curiosity and",
     price: 1399,
-    img: "../Bleu.jpg",
+    img: "../assets/sd.jpg",
   },
 
   {
@@ -66,15 +66,15 @@ const products = [
     age: 14,
     desc: "Foam dart blaster with long-range shooting action.",
     price: 1099,
-    img: "../Bleu.jpg",
+    img: "../assets/hp.jpg",
   },
 
   {
-    name: " Musical Dance Mat",
+    name: "Musical Dance Mat",
     age: 12,
     desc: " Light-up dance mat with music and movement challenges.",
     price: 1199,
-    img: "../Bleu.jpg",
+    img: "../assets/md.jpg",
   },
 ];
 
