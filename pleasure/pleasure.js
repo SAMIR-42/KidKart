@@ -6,28 +6,28 @@ const products = [
     age: 18,
     desc: "Interactive board to learn alphabets, numbers and basic words with sound buttons.",
     price: 799,
-    imgs: ["../Satisfyer1.jpg", "../Satisfyer2.jpg", "../Satisfyer3.jpg"],
+    imgs: ["../assets/sa.jpg", "../assets/sa.jpg", "../assets/sa.jpg"],
   },
   {
     name: "Junior Math Practice Kit",
     age: 8,
     desc: "Fun counting sticks and number cards to improve basic math skills..",
     price: 499,
-    imgs: ["../Satisfyer4.jpg", "../Satisfyer5.jpg", "../Satisfyer6.jpg"],
+    imgs: ["../assets/jm.jpg", "../assets/jm.jpg", "../assets/jm.jpg"],
   },
   {
     name: "Creative Building Blocks (150 pcs)",
     age: 10,
     desc: "Colorful blocks to boost creativity, logic and problem-solving ability..",
     price: 1199,
-    imgs: ["../Satisfyer7.jpg", "../Satisfyer8.jpg", "../Satisfyer9.jpg"],
+    imgs: ["../assets/cbb.jpg", "../assets/cbb.jpg", "../assets/cbb.jpg"],
   },
   {
     name: "Science Explorer Experiment Kit",
     age: 12,
     desc: "Safe science activities to encourage curiosity and hands-on learning.",
     price: 1399,
-    imgs: ["../Satisfyer10.jpg", "../Satisfyer11.jpg", "../Satisfyer12.jpg"],
+    imgs: ["../assets/se.jpg", "../assets/se.jpg", "../assets/se.jpg"],
   },
 
   {
@@ -35,7 +35,7 @@ const products = [
     age: 12,
     desc: "Educational world map puzzle to learn countries and geography in a fun way.",
     price: 899,
-    imgs: ["../Satisfyer10.jpg", "../Satisfyer11.jpg", "../Satisfyer12.jpg"],
+    imgs: ["../assets/mw.jpg", "../assets/mw.jpg", "../assets/mw.jpg"],
   },
 
 
@@ -44,7 +44,7 @@ const products = [
     age: 12,
     desc: " Educational world map puzzle to learn countries and geography in a fun way.",
     price: 649,
-    imgs: ["../Satisfyer10.jpg", "../Satisfyer11.jpg", "../Satisfyer12.jpg"],
+    imgs: ["../assets/es.jpg", "../assets/es.jpg", "../assets/es.jpg"],
   },
 
   {
@@ -52,7 +52,7 @@ const products = [
     age: 12,
     desc: "Logic and thinking puzzles to enhance concentration and IQ skills..",
     price: 599,
-    imgs: ["../Satisfyer10.jpg", "../Satisfyer11.jpg", "../Satisfyer12.jpg"],
+    imgs: ["../assets/bbp.jpg", "../assets/bbp.jpg", "../assets/bbp.jpg"],
   },
 
   {
@@ -60,7 +60,7 @@ const products = [
     age: 12,
     desc: "Creative art set with colors, papers and craft materials for skill development",
     price: 699,
-    imgs: ["../Satisfyer10.jpg", "../Satisfyer11.jpg", "../Satisfyer12.jpg"],
+    imgs: ["../assets/da.jpg", "../assets/da.jpg", "../assets/da.jpg"],
   },
 
   {
@@ -68,7 +68,7 @@ const products = [
     age: 13,
     desc: "Build and paint your own solar system model while learning about planets.",
     price: 1049,
-    imgs: ["../Satisfyer10.jpg", "../Satisfyer11.jpg", "../Satisfyer12.jpg"],
+    imgs: ["../assets/ss.jpg", "../assets/ss.jpg", "../assets/ss.jpg"],
   },
 
   {
@@ -76,7 +76,7 @@ const products = [
     age: 14,
     desc: "Beginner-friendly coding toy to introduce basic programming concepts.",
     price: 1799,
-    imgs: ["../Satisfyer10.jpg", "../Satisfyer11.jpg", "../Satisfyer12.jpg"],
+    imgs: ["../assets/kc.jpg", "../assets/kc.jpg", "../assets/kc.jpg"],
   },
 ];
 
