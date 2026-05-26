@@ -1,66 +1,54 @@
-// pleasurecart.js - Handles Pleasure Cart: display, remove, total, checkout
+document.addEventListener("DOMContentLoaded", () => {
+  const cartContainer = document.getElementById("cartContainer");
+  const totalPriceElem = document.getElementById("totalPrice");
+  const checkoutBtn = document.getElementById("checkoutBtn");
 
-const cartContainer = document.getElementById("cartContainer");
-const totalPriceElem = document.getElementById("totalPrice");
-const checkoutBtn = document.getElementById("checkoutBtn");
-const popup = document.getElementById("popup");
+  function render() {
+    const cart = KidKart.getCart();
+    cartContainer.innerHTML = "";
+    let total = 0;
 
-let cart = JSON.parse(localStorage.getItem("pleasureCart")) || [];
+    if (!cart.length) {
+      cartContainer.innerHTML =
+        '<p class="empty-msg">Cart is empty. <a href="pleasure.html">Shop learning toys</a></p>';
+      totalPriceElem.textContent = "₹0";
+      return;
+    }
 
-// Display cart items
-function displayCart() {
-  cartContainer.innerHTML = "";
-  let total = 0;
-
-  cart.forEach((item, index) => {
-    total += item.price;
-
-    const div = document.createElement("div");
-    div.classList.add("cart-item");
-
-    // Display first image from product imgs array
-    const imgSrc = item.imgs ? item.imgs[0] : "";
-    div.innerHTML = `
-      <img src="${imgSrc}" alt="${item.name}">
-      <div class="item-info">
-        <h4>${item.name}</h4>
-        <p>Age: ${item.age}+</p>
-        <p>₹${item.price}</p>
-      </div>
-      <button class="remove-btn">Remove</button>
-    `;
-
-    // Remove item from cart
-    div.querySelector(".remove-btn").addEventListener("click", () => {
-      cart.splice(index, 1);
-      localStorage.setItem("pleasureCart", JSON.stringify(cart));
-      displayCart();
-      showPopup("Item Removed!");
+    cart.forEach((item) => {
+      total += item.price * (item.qty || 1);
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `
+        <img src="${item.image || "../assets/sa.jpg"}" alt="${item.name}"/>
+        <div class="item-info">
+          <h4>${item.name}</h4>
+          <p>${item.age || ""}</p>
+          <p>₹${(item.price * (item.qty || 1)).toLocaleString("en-IN")}</p>
+        </div>
+        <button type="button" class="remove-btn" data-id="${item.id}">Remove</button>`;
+      cartContainer.appendChild(div);
     });
 
-    cartContainer.appendChild(div);
+    totalPriceElem.textContent = KidKart.formatINR(total);
+
+    cartContainer.querySelectorAll(".remove-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        KidKart.removeItem(btn.dataset.id);
+        KidKart.showToast("Item removed", "info");
+        render();
+      });
+    });
+  }
+
+  checkoutBtn.addEventListener("click", () => {
+    if (!KidKart.getCart().length) {
+      KidKart.showToast("Cart is empty!", "error");
+      return;
+    }
+    sessionStorage.removeItem("kidkartBuyNow");
+    window.location.href = "pleasurecheckout.html";
   });
 
-  totalPriceElem.innerText = `₹${total}`;
-}
-
-// Checkout button functionality
-checkoutBtn.addEventListener("click", () => {
-  if (cart.length === 0) {
-    showPopup("Cart is empty!");
-    return;
-  }
-  window.location.href = "pleasurecheckout.html";
+  render();
 });
-
-// Show popup message
-function showPopup(msg) {
-  popup.innerText = msg;
-  popup.classList.add("show");
-  setTimeout(() => {
-    popup.classList.remove("show");
-  }, 2000);
-}
-
-// Initial display
-displayCart();

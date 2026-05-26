@@ -1,28 +1,39 @@
-// pleasurecheckout.js - Handles fake payment process for Pleasure section
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutForm = document.getElementById("checkoutForm");
+  const loading = document.getElementById("loading");
+  const success = document.getElementById("success");
 
-const checkoutForm = document.getElementById("checkoutForm");
-const loading = document.getElementById("loading");
-const success = document.getElementById("success");
+  if (!KidKart.getCheckoutItems().length) {
+    KidKart.showToast("Cart is empty!", "error");
+    setTimeout(() => (window.location.href = "pleasure.html"), 1200);
+    return;
+  }
 
-// Handle form submission
-checkoutForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+  checkoutForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    loading.style.display = "block";
+    if (success) success.style.display = "none";
 
-  // Show loading animation
-  loading.style.display = "block";
-  success.style.display = "none";
+    await new Promise((r) => setTimeout(r, 2000));
 
-  // Simulate payment processing
-  setTimeout(() => {
     loading.style.display = "none";
-    success.style.display = "block";
+    const orderId = KidKart.generateOrderId();
+    localStorage.setItem("kidkartLastOrder", orderId);
+    KidKart.clearCart();
+    checkoutForm.reset();
 
-    // Clear Pleasure cart
-    localStorage.removeItem("pleasureCart");
+    if (success) {
+      success.style.display = "block";
+      success.textContent = `Payment successful! Order ID: ${orderId}`;
+    }
 
-    // Optional: redirect back to shop after 3 seconds
-    setTimeout(() => {
-      window.location.href = "pleasure.html";
-    }, 3000);
-  }, 2000); // 2 seconds loading
+    await KidKart.showModal({
+      title: "Payment Successful!",
+      message: `Order ${orderId} confirmed. Happy learning!`,
+      icon: "fa-check",
+      primaryText: "Back to Shop",
+    });
+
+    window.location.href = "pleasure.html";
+  });
 });

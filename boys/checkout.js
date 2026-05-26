@@ -1,59 +1,37 @@
-// ========================
-// BOYS CHECKOUT JS
-// ========================
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutForm = document.getElementById("checkoutForm");
+  const loading = document.getElementById("loading");
 
-const checkoutForm = document.getElementById("checkoutForm");
-const payBtn = document.getElementById("payBtn");
-const loading = document.getElementById("loading");
+  if (!checkoutForm) return;
 
-checkoutForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+  const items = KidKart.getCheckoutItems();
+  if (!items.length) {
+    KidKart.showToast("Add toys to cart first!", "error");
+    setTimeout(() => (window.location.href = "boyshop.html"), 1200);
+    return;
+  }
 
-  // Show loading animation
-  loading.style.display = "block";
-  payBtn.disabled = true;
+  checkoutForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    loading.style.display = "flex";
+    checkoutForm.style.pointerEvents = "none";
 
-  // Simulate payment delay (2 seconds)
-  setTimeout(() => {
+    await new Promise((r) => setTimeout(r, 2000));
+
     loading.style.display = "none";
-    payBtn.disabled = false;
+    checkoutForm.style.pointerEvents = "";
 
-    // Clear boys cart
-    localStorage.removeItem("boysCart");
+    const orderId = KidKart.generateOrderId();
+    KidKart.clearCart();
+    checkoutForm.reset();
 
-    // Show success popup
-    showPopup("Payment Successful! Your Toy will arrive in 2 days 🤭");
+    await KidKart.showModal({
+      title: "Payment Successful!",
+      message: `Order ${orderId} confirmed. Your toys arrive in 2 days!`,
+      icon: "fa-check",
+      primaryText: "Back to Shop",
+    });
 
-    // Optional: Redirect back to boys shop after 2.5 seconds
-    setTimeout(() => {
-      window.location.href = "boyshop.html";
-    }, 2500);
-  }, 2000);
+    window.location.href = "boyshop.html";
+  });
 });
-
-// ========================
-// CUSTOM POPUP FUNCTION
-// ========================
-function showPopup(message) {
-  const popup = document.createElement("div");
-  popup.classList.add("custom-popup");
-  popup.textContent = message;
-
-  document.body.appendChild(popup);
-
-  // Animate in
-  setTimeout(() => {
-    popup.style.transform = "translate(-50%, -50%) scale(1)";
-    popup.style.opacity = 1;
-  }, 100);
-
-  // Animate out after 2 seconds
-  setTimeout(() => {
-    popup.style.transform = "translate(-50%, -50%) scale(0)";
-    popup.style.opacity = 0;
-  }, 2100);
-
-  setTimeout(() => {
-    popup.remove();
-  }, 2500);
-}

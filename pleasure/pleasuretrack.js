@@ -6,22 +6,43 @@ const orderStages = [
   "Delivered",
 ];
 
-document.getElementById("trackBtn").addEventListener("click", () => {
-  let id = document.getElementById("orderId").value.trim();
-  let statusBox = document.getElementById("statusBox");
-  let text = document.getElementById("statusText");
-  let bar = document.getElementById("progressBar");
+document.addEventListener("DOMContentLoaded", () => {
+  const trackBtn = document.getElementById("trackBtn");
+  const orderIdInput = document.getElementById("orderId");
+  const statusBox = document.getElementById("statusBox");
+  const text = document.getElementById("statusText");
+  const bar = document.getElementById("progressBar");
 
-  if (id === "") {
-    alert("Please enter valid Order ID");
-    return;
-  }
+  trackBtn.addEventListener("click", () => {
+    const id = orderIdInput.value.trim();
+    const lastOrder = localStorage.getItem("kidkartLastOrder");
 
-  statusBox.classList.remove("hidden");
+    if (!id) {
+      if (window.KidKart) {
+        KidKart.showToast("Please enter your Order ID", "error");
+      }
+      orderIdInput.classList.add("shake");
+      setTimeout(() => orderIdInput.classList.remove("shake"), 400);
+      return;
+    }
 
-  // Choose random stage
-  let stage = Math.floor(Math.random() * orderStages.length);
+    statusBox.classList.remove("hidden");
 
-  text.innerText = orderStages[stage];
-  bar.style.width = ((stage + 1) / orderStages.length) * 100 + "%";
+    let stage;
+    if (lastOrder && id.toUpperCase() === lastOrder.toUpperCase()) {
+      stage = orderStages.length - 1;
+    } else if (id.length >= 4) {
+      stage = Math.floor(Math.random() * orderStages.length);
+    } else {
+      if (window.KidKart) KidKart.showToast("Invalid Order ID format", "error");
+      return;
+    }
+
+    text.textContent = orderStages[stage];
+    bar.style.width = ((stage + 1) / orderStages.length) * 100 + "%";
+
+    if (window.KidKart) {
+      KidKart.showToast(`Status: ${orderStages[stage]}`, "success");
+    }
+  });
 });

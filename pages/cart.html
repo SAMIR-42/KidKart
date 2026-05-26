@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KidKart</title>
+    <title>KidKart — Your Cart</title>
+    <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="cart.css" />
     <link
       rel="stylesheet"
@@ -11,69 +12,70 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="logo">
-        <i class="fas fa-dolly"></i>
+    <header class="kk-header">
+      <a href="../index.html" class="kk-logo">
+        <i class="fas fa-cart-shopping"></i>
         <span>KidKart</span>
-      </div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <!-- <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a> -->
+      </a>
+      <button class="kk-menu-btn" data-kk-menu aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="kk-nav">
+        <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
+        <a href="cart.html" class="kk-cart-link kk-active">
+          <i class="fas fa-shopping-cart"></i> Cart
+          <span class="kk-cart-badge kk-hidden" data-cart-badge>0</span>
+        </a>
       </nav>
     </header>
 
-    <!-- Cart Section -->
-    <section class="cart-section">
-      <h1>Your Cart 🛒</h1>
-      <div class="cart-container" id="cartContainer">
-        <!-- Example Cart Item -->
-        <div class="cart-item" data-price="5000">
-          <img src="../assets/dolls/#doll_uk.jpg" alt="Britney Doll" />
+    <main class="kk-main cart-page">
+      <h1 class="kk-page-title">Your Cart</h1>
+      <p class="kk-page-sub">Review items before checkout — prices update live.</p>
 
-          <div class="item-info">
-            <h2>Britney Doll</h2>
-            <p>Age: 7</p>
-            <p>₹399</p>
-          </div>
-          <button class="remove-item">Remove</button>
-        </div>
-
-        <div class="cart-item" data-price="6500">
-          <img src="../assets/dolls/#doll_russia.jpg" alt="Anastasia Doll" />
-          <div class="item-info">
-            <h2>Anastasia Doll</h2>
-            <p>Age: 10</p>
-            <p>₹599</p>
-          </div>
-          <button class="remove-item">Remove</button>
-        </div>
-
-        <!-- Add more cart items as needed -->
+      <div id="cartContainer" class="cart-list"></div>
+      <div id="emptyCart" class="cart-empty kk-hidden">
+        <i class="fas fa-shopping-basket"></i>
+        <h2>Your cart is empty</h2>
+        <p>Add some awesome toys from our shop!</p>
+        <a href="shop.html" class="kk-btn kk-btn-primary">Go Shopping</a>
       </div>
 
-      <div class="cart-summary">
-        <p>Total: ₹<span id="totalPrice">0</span></p>
-        <div class="cart-buttons">
-          <button id="backBtn">← Back to Shop</button>
-          <button id="buyBtn">Proceed to Buy 💳</button>
+      <div id="cartSummary" class="cart-summary kk-hidden">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="totalPrice">₹0</strong>
+        </div>
+        <div class="summary-row summary-delivery">
+          <span>Delivery</span>
+          <strong class="free-tag">FREE</strong>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <strong id="grandTotal">₹0</strong>
+        </div>
+        <div class="cart-actions">
+          <button type="button" id="backBtn" class="kk-btn kk-btn-ghost">
+            <i class="fas fa-arrow-left"></i> Continue Shopping
+          </button>
+          <button type="button" id="buyBtn" class="kk-btn kk-btn-primary">
+            Proceed to Checkout <i class="fas fa-lock"></i>
+          </button>
         </div>
       </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2026. KidKart!</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+    <footer class="kk-footer">
+      <p>© 2026 KidKart</p>
+      <div class="kk-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
     </footer>
 
+    <script src="../js/kidkart-core.js"></script>
     <script src="cart.js"></script>
   </body>
 </html>

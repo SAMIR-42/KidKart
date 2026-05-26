@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KidKart</title>
+    <title>KidKart — Checkout</title>
+    <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="checkout.css" />
     <link
       rel="stylesheet"
@@ -11,66 +12,90 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="logo">
-        <i class="fas fa-dolly"></i>
+    <header class="kk-header">
+      <a href="../index.html" class="kk-logo">
+        <i class="fas fa-cart-shopping"></i>
         <span>KidKart</span>
-      </div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+      </a>
+      <button class="kk-menu-btn" data-kk-menu aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="kk-nav">
+        <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
+        <a href="cart.html" class="kk-cart-link">
+          <i class="fas fa-shopping-cart"></i> Cart
+          <span class="kk-cart-badge kk-hidden" data-cart-badge>0</span>
+        </a>
       </nav>
     </header>
 
-    <!-- Checkout Section -->
-    <section class="checkout-section">
-      <h1>Payment 💳</h1>
-      <form id="paymentForm">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="John Doe" required />
-        </div>
-        <div class="form-group">
-          <label for="card">Card Number</label>
-          <input
-            type="text"
-            id="card"
-            placeholder="1234 5678 9012 3456"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="expiry">Expiry Date</label>
-          <input type="text" id="expiry" placeholder="MM/YY" required />
-        </div>
-        <div class="form-group">
-          <label for="cvv">CVV</label>
-          <input type="text" id="cvv" placeholder="123" required />
-        </div>
-        <div class="checkout-buttons">
-          <button type="button" id="backBtn">← Back to Shop</button>
-          <button type="submit" id="payBtn">Pay Now 💸</button>
-        </div>
-      </form>
+    <main class="kk-main checkout-page">
+      <h1 class="kk-page-title">Secure Checkout</h1>
+      <p class="kk-page-sub">Almost done — your toys are one step away!</p>
 
-      <!-- Loading Animation -->
-      <div class="loading" id="loading">
-        <i class="fas fa-spinner fa-spin"></i> Processing Payment...
+      <div class="checkout-layout">
+        <aside class="order-summary" id="orderSummary">
+          <h2><i class="fas fa-receipt"></i> Order Summary</h2>
+          <ul id="orderItems"></ul>
+          <div class="order-total">
+            <span>Total</span>
+            <strong id="checkoutTotal">₹0</strong>
+          </div>
+        </aside>
+
+        <section class="checkout-form-wrap">
+          <form id="paymentForm" class="checkout-form" novalidate>
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Full Name</label>
+              <input type="text" id="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="address"><i class="fas fa-location-dot"></i> Delivery Address</label>
+              <input type="text" id="address" placeholder="House no., street, city" required />
+            </div>
+            <div class="form-group">
+              <label for="card"><i class="fas fa-credit-card"></i> Card Number</label>
+              <input type="text" id="card" placeholder="1234 5678 9012 3456" maxlength="19" required inputmode="numeric" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiry">Expiry</label>
+                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required />
+              </div>
+              <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" placeholder="•••" maxlength="4" required inputmode="numeric" />
+              </div>
+            </div>
+            <div class="checkout-buttons">
+              <button type="button" id="backBtn" class="kk-btn kk-btn-ghost">
+                <i class="fas fa-arrow-left"></i> Back
+              </button>
+              <button type="submit" id="payBtn" class="kk-btn kk-btn-primary">
+                Pay Now <i class="fas fa-lock"></i>
+              </button>
+            </div>
+          </form>
+
+          <div class="loading kk-hidden" id="loading" aria-live="polite">
+            <div class="loading-spinner"></div>
+            <p>Processing your payment...</p>
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2025 KidKart!</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+    <footer class="kk-footer">
+      <p>© 2026 KidKart — Safe & fun shopping</p>
+      <div class="kk-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
     </footer>
 
+    <script src="../js/kidkart-core.js"></script>
     <script src="checkout.js"></script>
   </body>
 </html>

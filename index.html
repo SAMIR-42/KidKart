@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WELCOME TO - KidKart</title>
+    <title>KidKart — Fun Toys for Little Ones</title>
+    <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -11,47 +12,115 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="logo">
-        <i class="fas fa-dolly"></i>
+    <header class="kk-header">
+      <a href="index.html" class="kk-logo">
+        <i class="fas fa-cart-shopping"></i>
         <span>KidKart</span>
-      </div>
-      <nav>
-        <!-- <a href="index.html">Home</a> -->
-        <!-- <a href="pages/shop.html">Shop</a> -->
-        <a href="pages/cart.html"><i class="fas fa-shopping-cart"></i>My Cart</a>
+      </a>
+      <button class="kk-menu-btn" data-kk-menu aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="kk-nav">
+        <a href="index.html" class="kk-active"><i class="fas fa-home"></i> Home</a>
+        <a href="pages/shop.html"><i class="fas fa-store"></i> Shop</a>
+        <a href="pages/cart.html" class="kk-cart-link">
+          <i class="fas fa-shopping-cart"></i> Cart
+          <span class="kk-cart-badge kk-hidden" data-cart-badge>0</span>
+        </a>
       </nav>
     </header>
 
-    <!-- Landing Section -->
-    <section class="landing">
-      <div class="landing-content">
-        <h1 class="animated-text">Welcome to KidKart!</h1>
-        <p class="tagline">Play More, Smile More!</p>
-        <a href="pages/shop.html" class="btn start-btn"
-          >Start Shopping <i class="fas fa-arrow-right"></i
-        ></a>
-      </div>
-      <div class="landing-animation">
-        <i class="fas fa-dolly doll-icon"></i>
-        <i class="fas fa-dolly-flatbed doll-icon"></i>
-        <i class="fas fa-gift doll-icon"></i>
-      </div>
-    </section>
+    <main>
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-inner kk-animate">
+          <span class="hero-badge"><i class="fas fa-star"></i> Kids' Favorite Store</span>
+          <h1>Welcome to <span class="hero-brand">KidKart</span></h1>
+          <p class="hero-tagline">Play more, smile more — safe & fun toys delivered with love.</p>
+          <div class="hero-cta">
+            <a href="pages/shop.html" class="kk-btn kk-btn-primary">
+              Start Shopping <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="boys/boyshop.html" class="kk-btn kk-btn-outline">Action Toys</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>50+</strong><span>Toys</span></div>
+            <div><strong>4.9</strong><span>Happy Kids</span></div>
+            <div><strong>2 Days</strong><span>Delivery</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="float-card fc-1"><i class="fas fa-car"></i></div>
+          <div class="float-card fc-2"><i class="fas fa-robot"></i></div>
+          <div class="float-card fc-3"><i class="fas fa-football"></i></div>
+          <div class="float-card fc-4"><i class="fas fa-puzzle-piece"></i></div>
+        </div>
+      </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2026. KidKart!</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh"
+      <section class="categories">
+        <h2 class="section-title">Explore Our Stores</h2>
+        <p class="section-sub">Pick your adventure — every section has awesome toys!</p>
+        <div class="cat-grid">
+          <a href="pages/shop.html" class="cat-card cat-toys">
+            <i class="fas fa-gift"></i>
+            <h3>Main Toy Shop</h3>
+            <p>Cars, blocks, dolls & more</p>
+            <span class="cat-link">Shop now <i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="boys/boyshop.html" class="cat-card cat-action">
+            <i class="fas fa-bolt"></i>
+            <h3>Action Zone</h3>
+            <p>RC cars, robots & sports</p>
+            <span class="cat-link">Explore <i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="man/menshop.html" class="cat-card cat-trend">
+            <i class="fas fa-fire"></i>
+            <h3>Trending Toys</h3>
+            <p>Hot picks kids love</p>
+            <span class="cat-link">See trending <i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="pleasure/pleasure.html" class="cat-card cat-learn">
+            <i class="fas fa-book-open"></i>
+            <h3>Learning Store</h3>
+            <p>Educational fun kits</p>
+            <span class="cat-link">Learn & play <i class="fas fa-chevron-right"></i></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature">
+          <i class="fas fa-truck-fast"></i>
+          <h4>Fast Delivery</h4>
+          <p>Get toys at your door in 2 days</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-shield-heart"></i>
+          <h4>Safe for Kids</h4>
+          <p>Quality-checked, age-friendly toys</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-tags"></i>
+          <h4>Best Prices</h4>
+          <p>Fun without breaking the piggy bank</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="kk-footer">
+      <p>© 2026 KidKart — Made with love for little shoppers</p>
+      <div class="kk-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a
+          href="https://www.instagram.com/__patil__42?gsh=aG1tYnZ2dDhlNTIh"
+          aria-label="Instagram"
           ><i class="fab fa-instagram"></i
         ></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
     </footer>
 
+    <script src="js/kidkart-core.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

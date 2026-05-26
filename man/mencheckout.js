@@ -1,26 +1,31 @@
-// mencheckout.js - Handles Men's Checkout: fake payment processing and popup
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutForm = document.getElementById("checkoutForm");
+  const loading = document.getElementById("loading");
 
-const checkoutForm = document.getElementById("checkoutForm");
-const loading = document.getElementById("loading");
-const popup = document.getElementById("popup");
+  if (!KidKart.getCheckoutItems().length) {
+    KidKart.showToast("Cart is empty!", "error");
+    setTimeout(() => (window.location.href = "menshop.html"), 1200);
+    return;
+  }
 
-checkoutForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  loading.style.display = "block";
+  checkoutForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    loading.style.display = "block";
 
-  // Simulate fake payment delay
-  setTimeout(() => {
+    await new Promise((r) => setTimeout(r, 2000));
     loading.style.display = "none";
-    showPopup("Payment Successful! Your order will arrive soon 🤭");
-    localStorage.removeItem("menCart");
-    checkoutForm.reset();
-  }, 2000);
-});
 
-function showPopup(msg) {
-  popup.innerText = msg;
-  popup.classList.add("show");
-  setTimeout(() => {
-    popup.classList.remove("show");
-  }, 3000);
-}
+    const orderId = KidKart.generateOrderId();
+    KidKart.clearCart();
+    checkoutForm.reset();
+
+    await KidKart.showModal({
+      title: "Payment Successful!",
+      message: `Order ${orderId} is on the way!`,
+      icon: "fa-check",
+      primaryText: "Continue",
+    });
+
+    window.location.href = "menshop.html";
+  });
+});
